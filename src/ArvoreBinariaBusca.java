@@ -1,4 +1,5 @@
-public class ArvoreBinaria {
+public class ArvoreBinariaBusca {
+
     private class No {
         int chave;
         String valor;
@@ -21,9 +22,11 @@ public class ArvoreBinaria {
     }
 
     private No put(No no, int chave, String valor) {
-        if (no == null)  return new No(chave, valor);
-        if (chave < no.chave) no.esq = put(no.esq, chave, valor); //se a chave é menor que a do nó que estamos comparando, a gente anda pra esquerda
-        else if (chave > no.chave) no.dir = put(no.dir, chave, valor); //se a chave é maior que a do nó que estamos comparando a gente anda pra direita
+        if (no == null) return new No(chave, valor);
+        if (chave < no.chave)
+            no.esq = put(no.esq, chave, valor); //se a chave é menor que a do nó que estamos comparando, a gente anda pra esquerda
+        else if (chave > no.chave)
+            no.dir = put(no.dir, chave, valor); //se a chave é maior que a do nó que estamos comparando a gente anda pra direita
         else no.valor = valor; //sobrepondo o valor do nó existente
 
         return no;
@@ -68,9 +71,10 @@ public class ArvoreBinaria {
 
     private String repr(No no) {
         if (no == null) return "-";
-        String esqStr = (no.esq != null) ? repr(no.esq)  : "-"; //método recursivo que varre todos os nós da arv esquerda
-        String dirStr = (no.dir != null) ? repr(no.dir)  : "-"; //método recursivo que varre todos os nós da arv direita
+        String esqStr = (no.esq != null) ? repr(no.esq) : "-"; //método recursivo que varre todos os nós da arv esquerda
+        String dirStr = (no.dir != null) ? repr(no.dir) : "-"; //método recursivo que varre todos os nós da arv direita
         return "[" + esqStr + "] " + no.chave + " [" + dirStr + "]";
     }
+
 
 }

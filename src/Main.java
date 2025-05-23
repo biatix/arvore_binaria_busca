@@ -3,14 +3,14 @@
 public class Main {
     public static void main(String[] args) {
         //arvore vazia
-        ArvoreBinaria arvoreVazia = new ArvoreBinaria();
+        ArvoreBinariaBusca arvoreVazia = new ArvoreBinariaBusca();
 
         arvoreVazia.raiz = null;
         System.out.println("arvore vazia " + arvoreVazia.repr());
         //Saida: -
 
         //arvore só com a raiz
-        ArvoreBinaria arvoreSoComRaiz = new ArvoreBinaria();
+        ArvoreBinariaBusca arvoreSoComRaiz = new ArvoreBinariaBusca();
 
         arvoreSoComRaiz.put(40, "R");
         System.out.println("arvore só com a raiz " + arvoreSoComRaiz.repr());
@@ -22,7 +22,7 @@ public class Main {
         //   5         20
         //     \        \
         //     7         55
-        ArvoreBinaria arvorePreenchida = new ArvoreBinaria();
+        ArvoreBinariaBusca arvorePreenchida = new ArvoreBinariaBusca();
 
         arvorePreenchida.put(10, "A");
         arvorePreenchida.put(5, "B");
